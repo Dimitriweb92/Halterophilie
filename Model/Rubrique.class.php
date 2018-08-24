@@ -10,7 +10,7 @@ class rubrique
 {
 
 
-    private $id , $titre , $niveaux , $ordre;
+    private $id , $titre , $niveaux , $ordre , $article_idarticle ;
 
 
 
@@ -91,6 +91,22 @@ class rubrique
     public function getOrdre()
     {
         return $this->ordre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticleIdarticle()
+    {
+        return $this->article_idarticle;
+    }
+
+    /**
+     * @param mixed $article_idarticle
+     */
+    public function setArticleIdarticle(int $article_idarticle)
+    {
+        $this->article_idarticle =(int) $article_idarticle;
     }
 
 

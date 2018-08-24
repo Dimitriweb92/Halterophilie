@@ -9,7 +9,7 @@
 class Article
 {
 
-    private $idarticle ,$thetitle , $thetext , $thedate , $img , $admin_idadmin ;
+    private $idarticle ,$thetitle , $thetext , $thedate , $img , $admin_idadmin , $rubrique_rubriqueid ;
 
     public function __construct(Array $datas)
     {
@@ -133,6 +133,22 @@ class Article
     public function getAdminIdadmin()
     {
         return $this->admin_idadmin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRubriqueRubriqueid()
+    {
+        return $this->rubrique_rubriqueid;
+    }
+
+    /**
+     * @param mixed $rubrique_rubriqueid
+     */
+    public function setRubriqueRubriqueid(int $rubrique_rubriqueid)
+    {
+        $this->rubrique_rubriqueid =(int) $rubrique_rubriqueid;
     }
 
 
