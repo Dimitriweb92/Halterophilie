@@ -16,7 +16,8 @@ spl_autoload_register(function ($nameClass) {
         die("Error: " . $e->getMessage());
     }
     $articleM = new ArticleManager($pdo);
-    $authorM = new AdminManager($pdo);
+    $adminM = new AdminManager($pdo);
+    $rubriqueM = new RubriqueManager($pdo);
     if (isset($_SESSION['monid']) && $_SESSION['monid'] == session_id()) {
         require_once "Controller/AdminController.php";
     } else {

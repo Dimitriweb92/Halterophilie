@@ -1,7 +1,27 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dimitri.moyson
- * Date: 22-08-18
- * Time: 14:43
- */
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Administration</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+</head>
+<body>
+<h1>Classic editor</h1>
+<form action="[URL]" method="post">
+        <textarea name="content" id="editor">
+            &lt;p&gt;This is some sample content.&lt;/p&gt;
+        </textarea>
+    <p><input type="submit" value="Submit"></p>
+</form>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+</body>
+</html>
