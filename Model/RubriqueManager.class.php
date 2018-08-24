@@ -14,4 +14,22 @@ class RubriqueManager
     {
         $this->db = $connect;
     }
+
+    public function menuRubriquePrincipal (){
+        $menu = $this->db->query("SELECT * FROM rubrique r where r.niveaux = 0 ");
+        if ($menu->rowCount()){
+
+            return $menu->fetchAll(PDO::FETCH_ASSOC);
+
+        }else{
+            return false ;
+        }
+
+    }
+
+    
+
+
+
+
 }

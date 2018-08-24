@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e201bd4-9a0e-4b20-9f99-288c52b7f15c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/View/administration.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/administration.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/PublicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/PublicController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/RubriqueManager.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/RubriqueManager.class.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,10 +59,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="RubriqueManager.class.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Model/RubriqueManager.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Rubrique.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/Rubrique.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="765">
               <caret line="110" selection-start-line="110" selection-end-line="110" />
             </state>
           </provider>
@@ -88,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="administration.view.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="administration.view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/View/administration.view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+            <state relative-caret-position="442">
+              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
               <folding>
                 <element signature="e#334#338#0#HTML" expanded="true" />
                 <element signature="e#339#343#0#HTML" expanded="true" />
@@ -119,7 +126,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Model/ArticleManager.class.php" />
-        <option value="$PROJECT_DIR$/Model/RubriqueManager.class.php" />
         <option value="$PROJECT_DIR$/Model/Admin.class.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/.gitingore" />
@@ -130,6 +136,7 @@
         <option value="$PROJECT_DIR$/controller/PublicController.php" />
         <option value="$PROJECT_DIR$/csd.html" />
         <option value="$PROJECT_DIR$/View/administration.view.php" />
+        <option value="$PROJECT_DIR$/Model/RubriqueManager.class.php" />
       </list>
     </option>
   </component>
@@ -143,8 +150,8 @@
     <packageJsonPaths />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -165,12 +172,6 @@
               <item name="halterophilie" type="b2602c69:ProjectViewProjectNode" />
               <item name="halterophilie" type="462c0819:PsiDirectoryNode" />
               <item name="Asset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="halterophilie" type="b2602c69:ProjectViewProjectNode" />
-              <item name="halterophilie" type="462c0819:PsiDirectoryNode" />
-              <item name="Asset" type="462c0819:PsiDirectoryNode" />
-              <item name="plugin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="halterophilie" type="b2602c69:ProjectViewProjectNode" />
@@ -230,15 +231,16 @@
       <option name="presentableId" value="Default" />
       <updated>1534941115841</updated>
       <workItem from="1534941117190" duration="2893000" />
-      <workItem from="1535101193723" duration="8328000" />
+      <workItem from="1535101193723" duration="10962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11221000" />
+    <option name="totallyTimeSpent" value="13855000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="PHP-CGI Server" />
@@ -247,7 +249,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.086979166" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1743215" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -351,13 +353,6 @@
     <entry file="file:////Srv-dc1/2018/Dimitri/dimitri-juin-2018/View/index.view.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/RubriqueManager.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://F:/WEB2018/dimitri-juin-2018/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -407,13 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/Rubrique.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Model/AdminManager.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -454,14 +442,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/View/administration.view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        <state relative-caret-position="442">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
           <folding>
             <element signature="e#334#338#0#HTML" expanded="true" />
             <element signature="e#339#343#0#HTML" expanded="true" />
             <element signature="e#371#375#0#HTML" expanded="true" />
             <element signature="e#377#381#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Rubrique.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/RubriqueManager.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
         </state>
       </provider>
     </entry>
