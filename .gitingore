@@ -1,0 +1,9 @@
+### Example user template
+# aaa001
+# PHPStorm IntelliJ project files
+.idea/
+# NetBeans
+/nbproject/
+# .bak workbench
+# .slq
+/datas/db_halterophilie.sql
