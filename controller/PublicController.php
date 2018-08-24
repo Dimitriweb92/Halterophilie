@@ -1,4 +1,24 @@
 <?php
+$ArticleM = new ArticleManager($pdo);
+$rubriqueM = new  rubriqueManager($pdo);
+$adminM = new adminManager($pdo);
+
+// recupération des catégories pour le menu
+
+$menu = $rubriqueM->menuRubriquePrincipal();
+//var_dump($menu);
+
+if(!$menu){
+    $erroMenu = "Categorie inexistante";
+}else{
+
+    foreach ($menu as $value){
+        $viewmenu[] = new Rubrique($value);
+
+    }
+
+}
+
 
 if (isset($_POST['login'])){
 
@@ -16,5 +36,5 @@ if (isset($_POST['login'])){
 
     }
 
-
+    require_once "View/index.view.php";
 }

@@ -58,7 +58,7 @@ class rubrique
     /**
      * @param mixed $ordre
      */
-    public function setOrdre(int $ordre)
+    public function setOrdre($ordre)
     {
         $this->ordre =(int) $ordre;
     }
