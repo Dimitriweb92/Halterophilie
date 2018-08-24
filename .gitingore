@@ -4,6 +4,14 @@
 .idea/
 # NetBeans
 /nbproject/
-# .bak workbench
-# .slq
+
+# SQL Server files
+*.mdf
+*.ldf
+*.ndf
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
 /datas/db_halterophilie.sql
