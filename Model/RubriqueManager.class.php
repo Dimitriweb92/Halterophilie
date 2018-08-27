@@ -16,18 +16,46 @@ class RubriqueManager
     }
 
     public function menuRubriquePrincipal (){
-        $menu = $this->db->query("SELECT * FROM rubrique r where r.niveaux = 0 ");
-        if ($menu->rowCount()){
+        $menu = $this->db->query("SELECT * FROM rubrique ;");
+        $afficher =$menu->fetchAll(PDO::FETCH_ASSOC);
 
-            return $menu->fetchAll(PDO::FETCH_ASSOC);
 
+        if($menu->rowCount()){
+         return $this->afficher_menu(1,0,$afficher);
         }else{
-            return false ;
+            return false;
         }
 
     }
+        private function afficher_menu($parent, $niveau, $array) {
 
+        $html = "";
+        $niveau_precedent = 0;
 
+        if (!$niveau && !$niveau_precedent) $html .= "\n<ul>\n";
+
+        foreach ($array AS $noeud) {
+
+            if ($parent == $noeud['id']) {
+
+                if ($niveau_precedent < $niveau) $html .= "\n<ul>\n";
+
+                $html .= "<li>" . $noeud['titre'];
+
+                $niveau_precedent = $niveau;
+
+                $html .= $this->afficher_menu($noeud['niveaux'], ($niveau + 1), $array);
+
+            }
+        }
+
+        if (($niveau_precedent == $niveau) && ($niveau_precedent != 0)) $html .= "</ul>\n</li>\n";
+        else if ($niveau_precedent == $niveau) $html .= "</ul>\n";
+        else $html .= "</li>\n";
+
+        return $html;
+
+    }
 
 
 

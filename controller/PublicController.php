@@ -9,14 +9,14 @@ $menu = $rubriqueM->menuRubriquePrincipal();
 //var_dump($menu);
 
 if(!$menu){
-    $erroMenu = "Categorie inexistante";
+    $erroMenu = "Rubrique inexistante";
 }else{
 
-    foreach ($menu as $value){
+    /*foreach ($menu as $value){
         $viewmenu[] = new Rubrique($value);
 
-    }
-
+    }*/
+var_dump($menu);
 }
 
 
