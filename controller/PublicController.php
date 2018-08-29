@@ -5,17 +5,17 @@ $adminM = new adminManager($pdo);
 
 // recupération des catégories pour le menu
 
-$menu = $rubriqueM->menuRubriquePrincipal();
+$menu = $rubriqueM->menuRubrique();
 //var_dump($menu);
 
 if(!$menu){
     $erroMenu = "Rubrique inexistante";
 }else{
 
-    /*foreach ($menu as $value){
+    foreach ($menu as $value){
         $viewmenu[] = new Rubrique($value);
 
-    }*/
+    }
 var_dump($menu);
 }
 
@@ -27,9 +27,10 @@ if (isset($_POST['login'])){
 }else{
     $identification = new Admin($_POST);
     $connect = $adminM->identAdmin($identification);
+    //var_dump($identification);
 
     if ($connect){
-        header("Location: View/administration.view.php");
+        header("Location: View/indexAdministration.view.php");
     }else{
         $error = "Login et/ ou mot de passe incorrect";
         require_once "View/connect.view.php";
