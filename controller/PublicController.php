@@ -5,11 +5,6 @@ $adminM = new adminManager($pdo);
 
 
 $menu = $rubriqueM->MenuPrincipal();
-$sousmenu = $rubriqueM->SousMenu();
-//var_dump($menu);
-//echo "<pre>";
-//var_dump($sousmenu[0);
-//echo "</pre>";
 
 
 if($menu){
