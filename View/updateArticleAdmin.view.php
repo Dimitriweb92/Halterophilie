@@ -33,6 +33,8 @@
                 .catch( error => {
                     console.error( error );
                 } );
+            editor.config.get( 'image.toolbar' );
+            // -> [ 'imageStyle:full', 'imageStyle:side', '|', 'imageTextAlternative' ]
         </script>
     </div>
 </div>

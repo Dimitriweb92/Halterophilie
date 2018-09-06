@@ -20,7 +20,8 @@ class RubriqueManager
         $sql = $this->db->query("SELECT id,titre , niveaux FROM rubrique where niveaux = 0 ");
 
         if($sql->rowcount()){
-            
+            return $sql->fetchAll(PDO::FETCH_ASSOC);
+            // imbrication de CreateMenu
         }else{
             return false;
         }
