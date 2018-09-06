@@ -1,11 +1,9 @@
 <?php
 
-
 $ArticleM = new ArticleManager($pdo);
-$adminM = new adminManager($pdo);
-$rubriqueM = new rubriqueManager($pdo);
+$adminM = new AdminManager($pdo);
 
-#  deconnect
+# aaa087 deconnect
 if (isset($_GET['deconnect'])) {
     $adminM->deconnect();
 
@@ -16,9 +14,8 @@ if (isset($_GET['deconnect'])) {
     if (empty($_POST)) {
         # aaa097 - view form
         require "View/createArticleAdmin.view.php";
-        header("Location: View/createArticleAdmin.view.php");
     } else {
-        var_dump($_POST);
+        
         $newArticle = new Article($_POST);
         # aaa101 - insert into DB
         $succes = $ArticleM->createArticle($newArticle);
@@ -45,7 +42,7 @@ if (isset($_GET['deconnect'])) {
 
         # aaa111 view
         require_once "View/updateArticleAdmin.view.php";
-        # aaa115 form submit
+    # aaa115 form submit   
     }else{
         # aaa116 create article object with $_POST hydrate
         $update = new Article($_POST);
@@ -55,7 +52,7 @@ if (isset($_GET['deconnect'])) {
         if($change){
             header("Location: ./");
         }else{
-            $adminM->deconnect();
+            $UtilM->deconnect();
         }
     }
 # aaa125 delete an article
@@ -63,29 +60,21 @@ if (isset($_GET['deconnect'])) {
     $deleteId = (int) $_GET['delete'];
     # aaa128 use setter of Article
     $article = new Article(["idarticle"=>$deleteId]);
-
+    
     # aaa131 delete article
     $del = $ArticleM->deleteArticle($article);
     if($del){
         header("Location: ./");
     }else{
-        $adminM->deconnect();
+        $UtilM->deconnect();
     }
-
-
+    
+    
 # aaa089 homepage admin
 } else {
     # aaa107
-    $idauthor = (int) $_SESSION['idauthor'];
-    $recup = $ArticleM->listArticleAuthor($idauthor);
-    if (!$recup) {
-        $affiche = "Vous n'avez pas encore écris d'articles";
-    } else {
-        foreach ($recup AS $item) {
-            $affiche[] = new Article($item);
-        }
-    }
-    # aaa091
-    require_once "View/indexAdministration.view.php";
-}
+    $idadmin = (int) $_SESSION['idadmin'];
 
+    # aaa091
+    require_once "View/administration.view.php";
+}

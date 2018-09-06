@@ -1,53 +1,44 @@
 <?php
-//var_dump($_SESSION);
-if(isset($_GET["login"])){
-    $plogin = "active";
-}
-if(isset($_GET["categ"])){
-    $pcateg = "active";
-}
-elseif(empty($_GET) || isset($_GET["detail"])|| isset($_GET["user"])){
-    $paccueil = "active";
-}
-?>
-<ul class="nav nav-pills d-flex">
-    <?php
-    if (isset($_SESSION['monid']) && $_SESSION['monid'] == session_id()) {
-        ?>
-        <li class="nav-item">
-            <a class="nav-link" href="./">Acceuil</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="./">Liste des articles</a>
-        </li>
-        <li class="nav-item ml-auto">
-            <a class="p-2 ml-auto nav-link" href="?deconnect">Déconnexion</a>
-        </li>
-        <?php
-    }else{
-        ?>
-        <li class="nav-item">
-            <a class="nav-link" href="./">Acceuil</a>
-        </li>
-    <?php
-    foreach ($viewmenu as $item) {
-
-
-        ?>
-        <li class="nav-item">
-            <a class="nav-link <?=@$paccueil;?>" href="?categ=<?= $item->getId()?>"><?=$item->getTitre()?></a>
-            <?php
-            }
-            ?>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="./">Tous les catalogues</a>
-
-            </div>
-        </li>
-        <li class="nav-item ml-auto">
-            <a class="p-2 ml-auto nav-link <?=@$plogin;?>" href="?login">Connexion</a>
-        </li>
-        <?php
+    //var_dump($_SESSION);
+    if(isset($_GET["login"])){
+        $plogin = "active";
     }
-    ?>
-</ul>
+    if(isset($_GET["categ"])){
+        $pcateg = "active";
+    }
+    elseif(empty($_GET) || isset($_GET["detail"])|| isset($_GET["user"])){
+        $paccueil = "active";
+    }
+?>
+    <nav id="myHeader" class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: inherit;">
+        <div>
+            <button style="margin: 1rem;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample08">
+            <ul class="navbar-nav">
+
+        <?php foreach ($ListMenu as $item) { ?>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$item->getTitre()?></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown08">
+                    <?php 
+            for ($i=0; $i < count($sousmenu); $i++) { 
+            if ($sousmenu[$i]["niveaux"] == $item->getId() ) { ?>
+                            <a class="dropdown-item" href="#"><?=$sousmenu[$i]["titre"]?></a>
+
+        <?php 
+            }
+        } 
+        ?>
+
+                </div>
+            </li>
+            <?php } ?>
+            <li class="nav-item register">
+                    <a class="nav-link" href="#">S'inscrire</a>
+                </li>
+
+    </nav>

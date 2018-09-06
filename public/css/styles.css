@@ -1,0 +1,243 @@
+
+nav {
+    display: flex!important;
+    background-color: #e5e5e5d6;
+    justify-content: flex-end;
+}
+
+nav li {
+    padding: 20px;
+    list-style: none;
+    transition-property: background,color;
+    transition-duration: 0.2s;
+}
+
+nav li:hover {
+    background-color: #892d2d;
+    color: #FFF;
+}
+
+nav .active {
+    color: #892d2d;
+    font-weight: bold;
+}
+
+nav .register {
+    background-color: #892d2d;
+    font-weight: bold;
+    color: #FFF;
+}
+
+nav a {
+    text-decoration: none!important;
+    color: #000;
+}
+
+div#text-letter-decor {
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.fletter::first-letter {
+    color: #892d2d;
+    font-size: 53px;
+}
+
+.intro-1 {
+    background: url("../images/header2.jpg")no-repeat center center;
+    background-size: cover;
+}
+
+.intro-2 {
+    background: url("../images/header3-renew.jpg")no-repeat center center;
+    background-size: cover;
+}
+
+.bg-semitrans {
+    background-color: #0000006e;
+}
+
+.mt-10 {
+    margin-top: 7rem!important;
+}
+
+.text-yellow-dark {
+    color: #a18355;
+}
+
+.text-yellow-light {
+    color: #ca9640;
+}
+
+.w-45 {
+    width: 45%;
+}
+
+@media only screen and (max-width: 720px) {
+    .w-45 {
+        width: 100%;
+    }
+}
+
+.unique-color-dark {
+    background-color: #1c2331!important;
+}
+
+footer.page-footer {
+    bottom: 0;
+    color: #fff;
+}
+
+.deep-purple {
+    background-color: #892d2d!important;
+}
+
+footer.page-footer a {
+    color: #fff;
+}
+
+@font-face {
+    font-family: FontAwesome;
+    src: url(fontawesome-webfont.eot?v=4.7.0);
+    src: url(fontawesome-webfont.eot?#iefix&v=4.7.0) format('embedded-opentype'),url(fontawesome-webfont.woff2?v=4.7.0) format('woff2'),url(fontawesome-webfont.woff?v=4.7.0) format('woff'),url(fontawesome-webfont.ttf?v=4.7.0) format('truetype'),url(fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-facebook-f:before, .fa-facebook:before {
+    content: "\f09a";
+}
+
+.fa-twitter:before {
+    content: "\f099";
+}
+
+.fa-google-plus:before {
+    content: "\f0d5";
+}
+
+.fa-linkedin:before {
+    content: "\f0e1";
+}
+
+.fa-instagram:before {
+    content: "\f16d";
+}
+
+.hexagon {
+    position: relative;
+    width: 150px;
+    height: 86.60px;
+    background-color: #282626;
+    margin: 43.30px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0);
+}
+
+.hexagon:before, .hexagon:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 106.07px;
+    height: 106.07px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background-color: inherit;
+    left: 21.9670px;
+    box-shadow: 0 0 20px rgba(0,0,0,0);
+}
+
+.hexagon:before {
+    top: -53.0330px;
+}
+
+.hexagon:after {
+    bottom: -53.0330px;
+}
+
+/*cover up extra shadows*/
+.hexagon span {
+    color: #FFF;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 150px;
+    height: 86.6025px;
+    z-index: 2;
+    background: inherit;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+._i1 {
+    background-image: url(../images/icones/1.png)
+}
+
+._i2 {
+    background-image: url(../images/icones/2.png)
+}
+
+._i3 {
+    background-image: url(../images/icones/3.png)
+}
+
+._i4 {
+    background-image: url(../images/icones/4.png)
+}
+
+._i5 {
+    background-image: url(../images/icones/5.png)
+}
+
+._i6 {
+    background-image: url(../images/icones/6.png)
+}
+
+._i7 {
+    background-image: url(../images/icones/1.png)
+}
+
+._i1,._i2,._i3,._i4,._i5,._i6,._i7 {
+    height: 50px;
+    width: 50px;
+    x; background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.hexagon h6 {
+    color: #a18355;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.sticky {
+    position: fixed!important;
+    top: 0;
+    width: 100%;
+    z-index: 30!important;
+}
+.carousel-rnew li {
+    width: 150px!important;
+    text-indent: inherit!important;
+    padding-top: 15px;
+    text-align: center;
+    text-shadow: 0px 0px 2px #3e3e3e;
+    color: #e2e2e2;
+}

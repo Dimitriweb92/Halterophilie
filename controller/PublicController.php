@@ -1,41 +1,43 @@
 <?php
 $ArticleM = new ArticleManager($pdo);
-$rubriqueM = new  rubriqueManager($pdo);
+$rubriqueM = new  RubriqueManager($pdo);
 $adminM = new adminManager($pdo);
 
-// recupération des catégories pour le menu
 
-$menu = $rubriqueM->menuRubrique();
+$menu = $rubriqueM->MenuPrincipal();
+$sousmenu = $rubriqueM->SousMenu();
 //var_dump($menu);
+//echo "<pre>";
+//var_dump($sousmenu[0);
+//echo "</pre>";
 
-if(!$menu){
-    $erroMenu = "Rubrique inexistante";
-}else{
 
+if($menu){
     foreach ($menu as $value){
-        $viewmenu[] = new Rubrique($value);
-
+        $ListMenu[] = new Rubrique($value);
     }
-var_dump($menu);
+}else{
+    $erreurmenu = "Catégorie inexistante";
 }
 
 
-if (isset($_POST['login'])){
-
-    require_once "View/connect.view.php";
-
-}else{
-    $identification = new Admin($_POST);
-    $connect = $adminM->identAdmin($identification);
-    //var_dump($identification);
-
-    if ($connect){
-        header("Location: View/indexAdministration.view.php");
-    }else{
-        $error = "Login et/ ou mot de passe incorrect";
+if (isset($_GET['login'])){
+    if(empty($_POST)){
         require_once "View/connect.view.php";
-
     }
+    else{
+        $identification = new Admin($_POST);
+        $connect = $adminM->identAdmin($identification);
 
+        if ($connect){
+            header("Location: ./");
+        }
+        else{
+            $error = "Login et/ ou mot de passe incorrect";
+            require_once "View/connect.view.php";
+        }
+    }
+}
+else {
     require_once "View/index.view.php";
 }
