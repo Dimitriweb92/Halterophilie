@@ -2,7 +2,7 @@
 
 $ArticleM = new ArticleManager($pdo);
 $adminM = new AdminManager($pdo);
-
+$rubriqueM = new RubriqueManager($pdo);
 # aaa087 deconnect
 if (isset($_GET['deconnect'])) {
     $adminM->deconnect();
@@ -52,7 +52,7 @@ if (isset($_GET['deconnect'])) {
         if($change){
             header("Location: ./");
         }else{
-            $UtilM->deconnect();
+            $adminM->deconnect();
         }
     }
 # aaa125 delete an article
@@ -66,7 +66,7 @@ if (isset($_GET['deconnect'])) {
     if($del){
         header("Location: ./");
     }else{
-        $UtilM->deconnect();
+        $adminM->deconnect();
     }
     
     

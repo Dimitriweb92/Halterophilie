@@ -17,7 +17,7 @@ if (isset($_GET['login'])){
         $connect = $adminM->identAdmin($identification);
 
         if ($connect){
-            header("Location: ./");
+            header("Location: administration.view.php");
         }
         else{
             $error = "Login et/ ou mot de passe incorrect";

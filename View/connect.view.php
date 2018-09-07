@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php include "View/head.view.php";?>
+
+<?php // include "View/head.view.php";?>
+
 <body>
 	<div class="container mt-3">
 <?php
-include "View/menu.view.php";
+//include "View/menu.view.php";
 echo "<center><h1>Connexion</h1></center>";
 ?>
 <div class="border border-primary rounded">
