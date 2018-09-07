@@ -4,16 +4,8 @@ $rubriqueM = new  RubriqueManager($pdo);
 $adminM = new adminManager($pdo);
 
 
-$menu = $rubriqueM->MenuPrincipal();
+$menu = $rubriqueM->getMenu();
 
-
-if($menu){
-    foreach ($menu as $value){
-        $ListMenu[] = new Rubrique($value);
-    }
-}else{
-    $erreurmenu = "Catégorie inexistante";
-}
 
 
 if (isset($_GET['login'])){

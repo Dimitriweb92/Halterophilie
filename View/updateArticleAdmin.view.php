@@ -11,8 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
-</head>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script></head>
 <body>
 <script src="Asset/js/jquery-ui.js"></script>
 
@@ -21,20 +20,24 @@
 
     <div class="container mt-3">
 <center><h1>Modifier un article</h1></center>
-        <form action="[URL]" method="post">
-        <textarea name="content" id="editor">
-        &lt;p&gt;This is some sample content.&lt;/p&gt;
-    </textarea>
-            <p><input type="submit" value="Submit"></p>
-        </form>
+        <div id="editor" style="border-bottom-color: black;border-radius: 10px">
+            <p>This is some sample content.</p>
+        </div>
         <script>
             ClassicEditor
-                .create( document.querySelector( '#editor' ) )
+                .create( document.querySelector( '#editor' ), {
+                    toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+                    heading: {
+                        options: [
+                            { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                            { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                            { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+                        ]
+                    }
+                } )
                 .catch( error => {
-                    console.error( error );
+                    console.log( error );
                 } );
-            editor.config.get( 'image.toolbar' );
-            // -> [ 'imageStyle:full', 'imageStyle:side', '|', 'imageTextAlternative' ]
         </script>
     </div>
 </div>

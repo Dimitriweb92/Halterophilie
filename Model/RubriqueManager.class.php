@@ -17,11 +17,12 @@ class RubriqueManager
     }
 
     public function MenuPrincipal(){
-        $sql = $this->db->query("SELECT id,titre , niveaux FROM rubrique where niveaux = 0 ");
+        $sql = $this->db->query("SELECT * FROM rubrique  ");
 
         if($sql->rowcount()){
             return $sql->fetchAll(PDO::FETCH_ASSOC);
             // imbrication de CreateMenu
+
         }else{
             return false;
         }
