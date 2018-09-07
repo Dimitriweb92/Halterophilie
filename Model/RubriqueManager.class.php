@@ -41,13 +41,13 @@ class RubriqueManager
                 {
 
 
-                    $this->setMenu('<li class="dropdown-item dropdown">');
-                    $this->setMenu('<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">'.$element['titre'].' <span class="caret"></span></a> ');
+                    $this->setMenu('<li class="nav-item dropdown">');
+                    $this->setMenu('<a href="#" class="dropdown-toggle text-secondary" data-toggle="dropdown" role="button" aria-expanded="false">'.$element['titre'].' <span class="caret"></span></a> ');
 
                 }
                 else {
                     $this->setMenu('<li class="nav-item dropdown-item">');
-                    $this->setMenu('<a  href=?id="'.$element['id']. '">' . $element['titre'] . '</a>');
+                    $this->setMenu('<a  href=?id='.$element['id']. '>' . $element['titre'] . '</a>');
                 }
                 //if(in_array($element['idMenu'],$parents))
                 //{
