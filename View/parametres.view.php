@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Accueil</title>
     <link rel="stylesheet" type="text/css" href="public/css/admin.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
@@ -16,52 +17,43 @@
         <a class="active" href="?parametres">Paramètres</a>
         <a href="?deconnect">Déconnexion</a>
     </div>
-    <h2>Paramètres</h2>
 
     <div class="content">
-        <div class="container">
-            <form action="/action_page.php">
+        <h2>Paramètres</h2>
+        <form action="/action_page.php">
+            <div class="container col-50">
                 <div class="row">
+                    <h4>Maintenance</h4>
+                    <hr>
+                    <div class="col-75">
+                        <label class="switch">
+                            <input id="l0" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <label for="l0">Maintenance du site</label>
+
+                    </div>
                     <div class="col-25">
-                        <label for="fname">First Name</label>
+                        {IMG}
+                    </div>
+                </div>
+            </div>
+            <div class="container col-50 clear">
+                <div class="row">
+                    <h4>Utilisateur</h4>
+                    <hr>
+                    <div class="col-75">
+                        <label for="l1"><b>Mot de passe</b></label>
+                        <input type="password" id="l1" name="" placeholder="Entrer">        
                     </div>
                     <div class="col-75">
-                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        <label for="l2"><b>Retaper votre Mot de passe</b></label>
+                        <input type="password" id="l2" name="" placeholder="Entrer">                
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="lname">Last Name</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="country">Country</label>
-                    </div>
-                    <div class="col-75">
-                        <select id="country" name="country">
-                            <option value="australia">Australia</option>
-                            <option value="canada">Canada</option>
-                            <option value="usa">USA</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="subject">Subject</label>
-                    </div>
-                    <div class="col-75">
-                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <input type="submit" value="Submit">
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
+
     </div>
 
 </body>

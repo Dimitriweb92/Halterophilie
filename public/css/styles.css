@@ -1,4 +1,14 @@
-
+::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: #c7c7c7;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #414141;
+}
+::selection {
+    background-color: transparent;
+    color: #e67d3b;
+}
 nav {
     display: flex!important;
     background-color: #e5e5e5d6;
