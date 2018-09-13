@@ -15,7 +15,6 @@ if (isset($_GET['login'])){
     else{
         $identification = new Admin($_POST);
         $connect = $adminM->identAdmin($identification);
-
         if ($connect){
             require_once "View/administration.view.php";
         }
