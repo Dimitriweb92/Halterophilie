@@ -55,7 +55,7 @@
                 });
             </script>
             <li class="nav-item register">
-                <a class="nav-link" href="View/connect.view.php">S'inscrire</a>
+                <a class="nav-link" href="?login">S'inscrire</a>
             </li>
         </ul>
     </div>
