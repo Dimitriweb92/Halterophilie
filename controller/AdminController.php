@@ -1,16 +1,17 @@
 <?php
 $ArticleM = new ArticleManager($pdo);
-$adminM = new AdminManager($pdo);
+$adminM = new AdminManager($pdo);   
 # aaa087 deconnect
+var_dump($_GET);
 if (isset($_GET['deconnect'])) {
     $adminM->deconnect();
     # aaa095 create article
     
-} elseif (isset($_GET['post'])) {
+} elseif (isset($_GET['articles'])) {
     # aaa096 form not submitted
     if (empty($_POST)) {
         # aaa097 - view form
-        require "View/createArticleAdmin.view.php";
+        require "View/articles.view.php";
     } else {
         $newArticle = new Article($_POST);
         # aaa101 - insert into DB
@@ -20,7 +21,7 @@ if (isset($_GET['deconnect'])) {
         } else {
             # aaa102 - view form with error
             $error = "Article non inséré, veuillez recommencer";
-            require "View/createArticleAdmin.view.php";
+            require "View/articles.view.php";
         }
     }
     # aaa109 update an article
@@ -67,6 +68,21 @@ if (isset($_GET['deconnect'])) {
     
 } elseif (isset($_GET['parametres'])) {
     require_once "View/parametres.view.php";
+
+} elseif (isset($_GET['menus'])) {
+    require_once "View/menus.view.php";
+
+} elseif (isset($_GET['hautpage'])) {
+    require_once "View/hautpage.view.php";
+
+}elseif (isset($_GET['baspage'])) {
+    require_once "View/baspage.view.php";
+
+}elseif (isset($_GET['reseauxsociaux'])) {
+    require_once "View/reseauxsociaux.view.php";
+
+}elseif (isset($_GET['articles'])) {
+    require_once "View/articles.view.php";
 
 } else {
     # aaa107

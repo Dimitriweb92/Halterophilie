@@ -11,11 +11,7 @@
 
 <body>
     <div class="sidebar">
-        <a href="?articles">Articles</a>
-        <a href="?menus">Menu</a>
-        <a href="?reseauxsociaux">Réseaux Sociaux</a>
-        <a class="active" href="?parametres">Paramètres</a>
-        <a href="?deconnect">Déconnexion</a>
+        <?php include "View/menuAdmin.view.php";?>
     </div>
 
     <div class="content">
