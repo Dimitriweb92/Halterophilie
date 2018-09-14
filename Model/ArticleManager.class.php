@@ -62,12 +62,12 @@ class ArticleManager
         }
     }
     # aaa103 list all articles by idauthor
-    public function listArticleauthor(int $idauthor){
+    public function listArticleauthor(int $idadmin){
         $get = $this->db->query("SELECT a.*,
           u.idadmin,u.thelogin,u.thename,r.titre, r.id
           FROM article a INNER JOIN admin u 
             ON a.admin_idadmin = u.id INNER JOIN rubrique r ON r.rubrique_rubriqueid = r.id
-          WHERE u.idadmin = $idauthor
+          WHERE u.idadmin = $idadmin
           ORDER BY a.thedate DESC;");
         # aaa104 => one or more result
         if($get->rowCount()){
@@ -81,7 +81,7 @@ class ArticleManager
     # aaa094 Create (Crud)
     public function createArticle(Article $datas){
         # aaa100 if the idauthor is the same as authoridauthor
-        if($datas->getAdminIdadmin()==$_SESSION['idauthor']){
+        if($datas->getAdminIdadmin()==$_SESSION['idadmin']){
             $sql = "INSERT INTO article (idarticle,thetitle,thetext,thedate,admin_idadmin) VALUES (1,?,?,?,?)";
             $post = $this->db->prepare($sql);
             $post->bindValue(1,$datas->getThetitle(),PDO::PARAM_STR);
@@ -101,7 +101,7 @@ class ArticleManager
     public function updateArticle(Article $newDatas, int $getIdArticle){
         // attention si non modification de l'image
         # aaa120 verif if user is creator of article
-        if($newDatas->getAdminIdadmin()==$_SESSION['idauthor']){
+        if($newDatas->getAdminIdadmin()==$_SESSION['idadmin']){
             # aaa121 verif if article is the same in object and url
             if($newDatas->getIdarticle()==$getIdArticle){
                 # aaa122 prepare update
@@ -137,7 +137,7 @@ class ArticleManager
         $del = $this->db->prepare($sql);
         $del->bindValue(1, $id->getIdarticle(),PDO::PARAM_INT);
         # aaa130 permission user to delete his article
-        $del->bindValue(2, $_SESSION['idauthor'],PDO::PARAM_INT);
+        $del->bindValue(2, $_SESSION['idadmin'],PDO::PARAM_INT);
         $del->execute();
         if($del->rowCount()){
             return true;
