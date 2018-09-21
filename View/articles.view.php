@@ -1,6 +1,3 @@
-<?php
-var_dump($_POST);
-?>
 <!DOCTYPE html>
 <html>
 
@@ -21,31 +18,42 @@ var_dump($_POST);
         <h2>Articles</h2>
             <div class="container col-50">
                 <div class="row">
-                    <h4>{Titre}</h4>
-                    <hr><br>
-                    <?php
-                        if(isset($error)){?>
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                              <strong>Attention! </strong><?=$error;?>
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                        </div>
-                    <?php }?>
-                    <form action=""  method="post">
-                        <textarea name="thetext" id="editor1" rows="10" cols="80">
-                            
-                        </textarea>
-                        <script>
+                    <h4>Listes d'articles</h4>
+                    <hr>
+                    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Catégorie</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+<?php
+if(!is_array($affiche)){
+    echo "<h3>$affiche</h3>";
+}else{
+    echo "<pre>";
+    //var_dump($affiche);
+    echo "</pre>";
+    foreach ($affiche AS $item) {
+?>
+    <tr>
+      <th scope="row"><?= $item->getThedate();?></th>
+      <td><?= $item->getThetitle(); ?></td>
+      <td><?= $item->getRubriqueid();?></td>
+      <td><a href="?update=<?=$item->getIdarticle()?>"><button type="button" class="btn btn-primary btn-sm">Modifier</button></a>
+<button type="button" class="btn btn-secondary btn-sm" onclick="Delete(<?=$item->getIdarticle()?>);">Supprimer</button></td>
+    </tr>
+<?php
+    }
+}
+?>
+  </tbody>
+</table>
 
-                            CKEDITOR.replace( 'editor1' );
-                        </script>
-                        
-      <input type="datetime-local" name="thedate" class="form-control" id="lthedate" value="<?= $newDate = date('Y-m-d\TH:i', strtotime(date('Y-m-d\TH:i'))); ?>">
-                        /<input type="hidden" name="thetitle" value="<?=$_SESSION['idadmin']?>">
-                        /<input type="hidden" name="adminidadmin" value="<?=$_SESSION['idadmin']?>">
-                        <button type="submit" class="btn btn-primary">Ajouter l'article</button>
-                    </form>
                 </div>
             </div>
     </div>

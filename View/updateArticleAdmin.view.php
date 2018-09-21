@@ -11,35 +11,72 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script></head>
+</head>
 <body>
-<script src="Asset/js/jquery-ui.js"></script>
-
-<script src="Asset/js/datepicker-fr.js"></script>
-
-
     <div class="container mt-3">
+<?php
+include "View/menu.view.php";
+?>
 <center><h1>Modifier un article</h1></center>
-        <div id="editor" style="border-bottom-color: black;border-radius: 10px">
-            <p>This is some sample content.</p>
-        </div>
-        <script>
-            ClassicEditor
-                .create( document.querySelector( '#editor' ), {
-                    toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
-                    heading: {
-                        options: [
-                            { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                            { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                            { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
-                        ]
-                    }
-                } )
-                .catch( error => {
-                    console.log( error );
-                } );
-        </script>
+<?php
+# aaa113 article doesn't exist
+if(!$recup){
+    echo "<h3>Cet article n'existe plus</h3>";
+}else {
+
+?>
+
+
+<form name="oneName2" action="" method="post">
+
+<div class="form-group row">
+    <label for="lthetitle" class="col-sm-2 col-form-label">Titre</label>
+    <div class="col-sm-10">
+      <input type="text" name="thetitle" class="form-control" id="lthetitle" placeholder="Entrez le titre de l'article" value="<?=$recup2->getThetitle()?>">
     </div>
+</div>
+<div class="form-group row">
+    <label for="lthedate" class="col-sm-2 col-form-label">Date</label>
+    <div class="col-sm-10">
+      <input type="datetime-local" name="thedate" class="form-control" id="lthedate" value="<?= $newDate = date('Y-m-d\TH:i', strtotime($recup2->getThedate())); ?>">
+    </div>
+</div>
+<div class="form-group row">
+    <label for="lthetitle" class="col-sm-2 col-form-label">Catégorie</label>
+    <div class="col-sm-10">
+      <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="categoryidcategory" id="inlineRadio1" value="1" <?=@$x1;?>>
+      <label class="form-check-label" for="inlineRadio1">HTML5/CSS3</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="categoryidcategory" id="inlineRadio2" value="2" <?=@$x2;?>>
+      <label class="form-check-label" for="inlineRadio2">JavaScript/Jquery</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="categoryidcategory" id="inlineRadio3" value="3" <?=@$x3;?>>
+      <label class="form-check-label" for="inlineRadio3">PHP/MySQL</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="categoryidcategory" id="inlineRadio4" value="4" <?=@$x4;?>>
+      <label class="form-check-label" for="inlineRadio4">Autres</label>
+    </div>
+    </div>
+</div>
+<div class="form-group">
+    <label for="exampleTextarea">Texte</label>
+    <textarea class="form-control" name="thetext" id="exampleTextarea" rows="3"><?=$recup2->getThetext()?></textarea>
+  </div>
+
+<input type="hidden" name="idarticle" value="<?=$recup2->getIdarticle()?>">
+<input type="hidden" name="Authoridauthor" value="<?=$recup2->getAuthoridauthor()?>">
+
+<center><button type="submit" class="btn btn-primary">Modifier l'article</button></center>
+</form>
+
+    <?php
+}
+?>
+<footer><center>Copyright CF2M 2018</center></footer>
 </div>
 </body>
 </html>

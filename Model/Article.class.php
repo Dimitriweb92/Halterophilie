@@ -1,22 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dimitri.moyson
- * Date: 22-08-18
- * Time: 14:37
- */
 
 class Article
 {
+    # aaa020 mapping table article
+    private $idarticle, $thetitle, $thetext, $thedate,$rubriqueid;
 
-    private $idarticle ,$thetitle , $thetext , $thedate , $img , $admin_idadmin , $rubrique_rubriqueid ;
+    # aaa057 attributs from table util for JOIN (see ArticleManager.class.php)
+    private $idadmin, $thelogin, $thename;
 
-    public function __construct(Array $datas)
+
+    # aaa021
+    public function __construct(array $datas)
     {
+        # aaa023
         $this->hydrate($datas);
     }
 
-    # aaa013
+    # aaa022
     private function hydrate(Array $theDatas){
         foreach ($theDatas as $thekey => $thevalue){
             $createNameSetter = "set".ucfirst($thekey);
@@ -27,35 +27,27 @@ class Article
             }
         }
     }
-    // generate Setters
 
-    /**
-     * @param mixed $idarticle
-     */
-    public function setIdarticle(int $idarticle)
+    # aaa024 setters
+    public function setIdarticle($idarticle)
     {
-        $this->idarticle =(int)$idarticle;
+        # aaa026 format setters
+        $this->idarticle = (int) $idarticle;
     }
 
-    /**
-     * @param mixed $thetitle
-     */
     public function setThetitle(string $thetitle)
     {
-        $this->thetitle = htmlspecialchars(strip_tags(trim($thetitle)),ENT_QUOTES);
+        $check = trim(htmlspecialchars(strip_tags($thetitle),ENT_QUOTES));
+        if(!empty($check)) {
+            $this->thetitle = $check;
+        }
     }
 
-    /**
-     * @param mixed $thetext
-     */
     public function setThetext(string $thetext)
     {
-        $this->thetext = htmlspecialchars(strip_tags(trim($thetext)),ENT_QUOTES);
+        $this->thetext = $thetext;
     }
 
-    /**
-     * @param mixed $thedate
-     */
     public function setThedate($thedate)
     {
         if(!empty($thedate)) {
@@ -71,101 +63,78 @@ class Article
         }
     }
 
-    /**
-     * @param mixed $img
-     */
-    public function setImg($img)
+
+    public function setCategoryidcategory($categoryidcategory)
     {
-        $this->img = $img;
+        $this->categoryidcategory = (int) $categoryidcategory;
+    }
+    public function setThecategtitle(string $thecategtitle)
+    {
+        $check = trim(htmlspecialchars(strip_tags($thecategtitle),ENT_QUOTES));
+        if(!empty($check)) {
+            $this->thecategtitle = $check;
+        }
+    }
+    public function setRubriqueid($rubriqueid)
+    {
+        $this->rubriqueid = (int) $rubriqueid;
     }
 
-    /**
-     * @param mixed $admin_idadmin
-     */
-    public function setAdminIdadmin(int $admin_idadmin)
-    {
-        $this->admin_idadmin =(int) $admin_idadmin;
-    }
 
-
-     // Generate getters
-
+    # aaa025 getters
     public function getIdarticle()
     {
+        # aaa027 format getters
         return $this->idarticle;
     }
 
-    /**
-     * @return mixed
-     */
     public function getThetitle()
     {
         return html_entity_decode($this->thetitle);
     }
 
-    /**
-     * @return mixed
-     */
     public function getThetext()
     {
         return html_entity_decode($this->thetext);
     }
 
-    /**
-     * @return mixed
-     */
     public function getThedate()
     {
         return $this->thedate;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getImg()
-    {
-        return $this->img;
-    }
 
-    /**
-     * @return mixed
-     */
-    public function getAdminIdadmin()
+    public function getRubriqueid()
     {
-        return $this->admin_idadmin;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRubriqueRubriqueid()
-    {
-        return $this->rubrique_rubriqueid;
-    }
-
-    /**
-     * @param mixed $rubrique_rubriqueid
-     */
-    public function setRubriqueRubriqueid(int $rubrique_rubriqueid)
-    {
-        $this->rubrique_rubriqueid =(int) $rubrique_rubriqueid;
+        return $this->rubriqueid;
     }
 
 
+    public function setThelogin(string $thelogin)
+    {
+        $data = trim(htmlspecialchars(strip_tags($thelogin)),ENT_QUOTES);
+        if(!empty($data)) {
+            $this->thelogin = $data;
+        }
+    }
+
+    public function setThename(string $thename)
+    {
+        $data = trim(htmlspecialchars(strip_tags($thename)),ENT_QUOTES);
+        if(!empty($data)) {
+            $this->thename = $data;
+        }
+    }
 
 
+    public function getThelogin()
+    {
+        return html_entity_decode($this->thelogin);
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    public function getThename()
+    {
+        return html_entity_decode($this->thename);
+    }
 
 }

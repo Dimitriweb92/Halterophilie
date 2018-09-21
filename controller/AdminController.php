@@ -1,17 +1,17 @@
 <?php
 $ArticleM = new ArticleManager($pdo);
 $adminM = new AdminManager($pdo);   
-# aaa087 deconnect
-var_dump($_GET);
+
+
 if (isset($_GET['deconnect'])) {
     $adminM->deconnect();
     # aaa095 create article
     
-} elseif (isset($_GET['articles'])) {
+} elseif (isset($_GET['modifarticles'])) {
     # aaa096 form not submitted
     if (empty($_POST)) {
         # aaa097 - view form
-        require "View/articles.view.php";
+        require "View/modifarticles.view.php";
     } else {
         $newArticle = new Article($_POST);
         # aaa101 - insert into DB
@@ -21,7 +21,7 @@ if (isset($_GET['deconnect'])) {
         } else {
             # aaa102 - view form with error
             $error = "Article non inséré, veuillez recommencer";
-            require "View/articles.view.php";
+            require "View/modifarticles.view.php";
         }
     }
     # aaa109 update an article
@@ -82,12 +82,26 @@ if (isset($_GET['deconnect'])) {
     require_once "View/reseauxsociaux.view.php";
 
 }elseif (isset($_GET['articles'])) {
+    $idadmin = (int)$_SESSION['idadmin'];
+    
+    $recup = $ArticleM->listArticle($idadmin);
+    echo "<pre>";
+    //var_dump($recup);
+    echo "</pre>";
+    if (!$recup) {
+        $affiche = "Vous n'avez pas encore écris d'articles";
+    } else {
+        foreach ($recup AS $item) {
+            $affiche[] = new Article($item);
+        }
+    }
+
     require_once "View/articles.view.php";
 
 } else {
     # aaa107
     $idadmin = (int)$_SESSION['idadmin'];
-    # aaa091
+    
     require_once "View/administration.view.php";
 }
 ?>

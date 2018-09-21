@@ -5,7 +5,7 @@
 # aaa004 create connection constants
 define("DB_TYPE","mysql");
 define("DB_HOST","localhost");
-define("DB_NAME","dbhalterophilie");
+define("DB_NAME","bddhalterophilie");
 define("DB_PORT",3306);
 define("DB_LOGIN","root");
 define("DB_PWD","");
