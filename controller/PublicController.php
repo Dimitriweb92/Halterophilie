@@ -1,15 +1,15 @@
 <?php
 $ArticleM = new ArticleManager($pdo);
 $rubriqueM = new  RubriqueManager($pdo);
-$adminM = new adminManager($pdo);
+$adminM = new AdminManager($pdo);
 
 
 $menu = $rubriqueM->getMenu();
 
 if (isset($menu)){
     for ($i=1; $i<=$menu; $i++) {
-        $numPage = "<a href=".require_once'View/menupage'.$i."'>".$i."</a>";
-        return $numPage;
+        $numPage = "<a href='halterophilie/?id='".$i."'>".$i."</a>";
+        require_once "View/menupage.php";
 
     };
 }
