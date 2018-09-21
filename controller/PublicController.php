@@ -6,7 +6,13 @@ $adminM = new adminManager($pdo);
 
 $menu = $rubriqueM->getMenu();
 
+if (isset($menu)){
+    for ($i=1; $i<=$menu; $i++) {
+        $numPage = "<a href=".require_once'View/menupage'.$i."'>".$i."</a>";
+        return $numPage;
 
+    };
+}
 
 if (isset($_GET['login'])){
     if(empty($_POST)){
