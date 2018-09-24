@@ -1,7 +1,7 @@
 <?php
 $ArticleM = new ArticleManager($pdo);
-$adminM = new AdminManager($pdo);   
-
+$adminM = new AdminManager($pdo);
+$UtilM = new RubriqueManager($pdo);
 
 if (isset($_GET['deconnect'])) {
     $adminM->deconnect();
@@ -48,7 +48,7 @@ if (isset($_GET['deconnect'])) {
         if ($change) {
             header("Location: ./");
         } else {
-            $UtilM->deconnect();
+            $adminM->deconnect();
         }
     }
     # aaa125 delete an article
@@ -62,7 +62,7 @@ if (isset($_GET['deconnect'])) {
     if ($del) {
         header("Location: ./");
     } else {
-        $UtilM->deconnect();
+        $adminM->deconnect();
     }
     # aaa089 homepage admin
     
@@ -84,7 +84,7 @@ if (isset($_GET['deconnect'])) {
 }elseif (isset($_GET['articles'])) {
     $idadmin = (int)$_SESSION['idadmin'];
     
-    $recup = $ArticleM->listArticle($idadmin);
+    $recup = $ArticleM->listArticle();
     echo "<pre>";
     //var_dump($recup);
     echo "</pre>";
