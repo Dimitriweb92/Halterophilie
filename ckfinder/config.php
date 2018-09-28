@@ -26,7 +26,7 @@ $config = array();
 // https://docs.ckeditor.com/ckfinder/ckfinder3-php/configuration.html#configuration_options_authentication
 
 $config['authentication'] = function () {
-    return false;
+    return true;
 };
 
 /*============================ License Key ============================================*/
@@ -66,8 +66,8 @@ $config['images'] = array(
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
-    'baseUrl'      => '/ckfinder/userfiles/',
-//  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
+    'baseUrl'      => '/haltero/ckfinder/userfiles/',
+    'root'         => '/haltero/ckfinder/upload/', // Can be used to explicitly set the CKFinder user files directory.
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
@@ -128,7 +128,7 @@ $config['accessControl'][] = array(
 $config['overwriteOnUpload'] = false;
 $config['checkDoubleExtension'] = true;
 $config['disallowUnsafeCharacters'] = false;
-$config['secureImageUploads'] = true;
+$config['secureImageUploads'] = false;
 $config['checkSizeAfterScaling'] = true;
 $config['htmlExtensions'] = array('html', 'htm', 'xml', 'js');
 $config['hideFolders'] = array('.*', 'CVS', '__thumbs');
@@ -167,7 +167,7 @@ $config['sessionWriteClose'] = true;
 /*================================= CSRF protection ===================================*/
 // https://docs.ckeditor.com/ckfinder/ckfinder3-php/configuration.html#configuration_options_csrfProtection
 
-$config['csrfProtection'] = true;
+$config['csrfProtection'] = false;
 
 /*===================================== Headers =======================================*/
 // https://docs.ckeditor.com/ckfinder/ckfinder3-php/configuration.html#configuration_options_headers

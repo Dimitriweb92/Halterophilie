@@ -16,7 +16,7 @@ class ArticleManager
         // $get = $this->db->query("SELECT a.* FROM article a ORDER BY a.thedate DESC;");
 
         # aaa060 - replace a38 recup all articles with JOIN author
-        $get = $this->db->query("SELECT * FROM article");
+        $get = $this->db->query("SELECT article.*, rubrique.titre, rubrique.niveaux FROM article INNER JOIN rubrique ON article.rubriqueid = rubrique.id WHERE rubrique.niveaux > 0");
 
         # aaa039 => one or more result
         if($get->rowCount()){
@@ -30,28 +30,10 @@ class ArticleManager
             return false;
         }
     }
-    public function listArticleCateg(int $id){
 
-        $get = $this->db->query("SELECT a.*,
-          u.idauthor,u.thelogin,u.thename, c.thecategtitle, c.idcategory
-          FROM article a INNER JOIN author u 
-            ON a.authoridauthor = u.idauthor INNER JOIN category c ON a.categoryidcategory = c.idcategory
-          WHERE c.idcategory ='$id';");
-
-        # aaa039 => one or more result
-        if($get->rowCount()){
-
-            # aaa041 - return array assoc's in array index
-            return $get->fetchAll(PDO::FETCH_ASSOC);
-
-        }else{
-            # aaa040 => no result => return false
-            return false;
-        }
-    }
     # aaa063 get one article
     public function oneArticle(int $id){
-        $sql = "SELECT * FROM article WHERE idarticle = ?";
+        $sql = "SELECT article.*, rubrique.titre FROM article INNER JOIN rubrique ON article.rubriqueid = rubrique.id WHERE idarticle = ?";
         $request = $this->db->prepare($sql);
         $request->bindValue(1,$id,PDO::PARAM_INT);
         $request->execute();

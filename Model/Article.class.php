@@ -6,7 +6,7 @@ class Article
     private $idarticle, $thetitle, $thetext, $thedate,$rubriqueid;
 
     # aaa057 attributs from table util for JOIN (see ArticleManager.class.php)
-    private $idadmin, $thelogin, $thename;
+    private $titre,$niveaux;
 
 
     # aaa021
@@ -110,31 +110,28 @@ class Article
     }
 
 
-    public function setThelogin(string $thelogin)
+    public function setTitre(string $titre)
     {
-        $data = trim(htmlspecialchars(strip_tags($thelogin)),ENT_QUOTES);
+        $data = trim(htmlspecialchars(strip_tags($titre)),ENT_QUOTES);
         if(!empty($data)) {
-            $this->thelogin = $data;
+            $this->titre = $data;
         }
     }
-
-    public function setThename(string $thename)
+    public function setNiveaux($niveaux)
     {
-        $data = trim(htmlspecialchars(strip_tags($thename)),ENT_QUOTES);
-        if(!empty($data)) {
-            $this->thename = $data;
-        }
+        $this->niveaux = (int) $niveaux;
+    }
+    public function getNiveaux()
+    {
+        return $this->niveaux;
     }
 
 
-    public function getThelogin()
+
+    public function getTitre()
     {
-        return html_entity_decode($this->thelogin);
+        return html_entity_decode($this->titre);
     }
 
-    public function getThename()
-    {
-        return html_entity_decode($this->thename);
-    }
 
 }
