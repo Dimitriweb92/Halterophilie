@@ -17,7 +17,7 @@ class RubriqueManager
     }
 
     public function MenuPrincipal(){
-        $sql = $this->db->query("SELECT * FROM rubrique  ");
+        $sql = $this->db->query("SELECT rubrique.*, article.rubriqueid, article.idarticle FROM rubrique INNER JOIN article ON rubrique.id = article.rubriqueid");
 
         if($sql->rowcount()){
             return $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -40,14 +40,14 @@ class RubriqueManager
                 if(in_array($element['id'],$parents))
                 {
 
-
+                    
                     $this->setMenu('<li class="nav-item dropdown">');
                     $this->setMenu('<a href="#" class="dropdown-toggle text-secondary" data-toggle="dropdown" role="button" aria-expanded="false">'.$element['titre'].' <span class="caret"></span></a> ');
 
                 }
                 else {
                     $this->setMenu('<li class="nav-item dropdown-item">');
-                    $this->setMenu('<a  href=?id='.$element['id']. '>' . $element['titre'] . '</a>');
+                    $this->setMenu('<a  href=?page='.$element['idarticle']. '>' . $element['titre'] . '</a>');
                 }
                 //if(in_array($element['idMenu'],$parents))
                 //{

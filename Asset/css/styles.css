@@ -1,3 +1,16 @@
+::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: #c7c7c7;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #414141;
+}
+
+::selection {
+    background-color: transparent;
+    color: #e67d3b;
+}
 
 nav {
     display: flex!important;
@@ -14,7 +27,7 @@ nav li {
 
 nav li:hover {
     background-color: #892d2d;
-    color: #FFF;
+    color: #FFF!important;
 }
 
 nav .active {
@@ -31,8 +44,11 @@ nav .register {
 nav a {
     text-decoration: none!important;
     color: #000;
+    vertical-align: sub;
 }
-
+ul li a ul li:hover{
+    background-color: none;
+}
 div#text-letter-decor {
     text-transform: uppercase;
     font-size: xx-large;
@@ -233,6 +249,7 @@ html {
     width: 100%;
     z-index: 30!important;
 }
+
 .carousel-rnew li {
     width: 150px!important;
     text-indent: inherit!important;

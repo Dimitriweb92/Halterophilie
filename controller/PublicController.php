@@ -6,13 +6,7 @@ $adminM = new AdminManager($pdo);
 
 $menu = $rubriqueM->getMenu();
 
-if (isset($menu)){
-    for ($i=1; $i<=$menu; $i++) {
-        $numPage = "<a href='halterophilie/?id='".$i."'>".$i."</a>";
-        require_once "View/menupage.php";
 
-    };
-}
 
 if (isset($_GET['login'])){
     if(empty($_POST)){
@@ -29,6 +23,22 @@ if (isset($_GET['login'])){
             require_once "View/connect.view.php";
         }
     }
+}
+elseif (isset($_GET['page'])&&ctype_digit($_GET['page'])){
+
+    $idArticle = (int) $_GET['page'];
+
+
+    $recup = $ArticleM->oneArticle($idArticle);
+
+    if(!$recup){
+        $oneView = "Article supprimé ou non existant";
+    }else{
+        $oneView = new Article($recup);
+    }
+
+    require_once "View/page.view.php";
+
 }
 else {
     require_once "View/index.view.php";
