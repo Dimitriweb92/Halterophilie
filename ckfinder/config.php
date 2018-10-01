@@ -177,4 +177,5 @@ $config['headers'] = array();
 /*============================== End of Configuration =================================*/
 
 // Config must be returned - do not change it.
+
 return $config;
