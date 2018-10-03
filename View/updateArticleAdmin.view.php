@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <title>Admin - Modifier un article</title>
     <script src="Asset/js/myJs.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+ 
+<!-- include summernote css/js -->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
 </head>
 
@@ -51,39 +52,37 @@ echo "<h3>Cet article n'existe plus</h3>";
 
                     <div class="form-group">
                         <label for="exampleTextarea">Texte</label>
+                        <textarea name="thetext" id="summernote"><?=$recup2->getThetext()?></textarea>
+                            <script>$(document).ready(function() {
+$("#summernote").summernote({
+  placeholder: 'enter directions here...',
+        height: 300,
+         callbacks: {
+        onImageUpload : function(files, editor, welEditable) {
 
-                        <textarea name="thetext" id="editor">
-                            <?=$recup2->getThetext()?>
-                        </textarea>
-                        <script>
-var toolbarOptions = [
-  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-  ['blockquote', 'code-block'],
-
-  [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-  [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-  [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-  [{ 'direction': 'rtl' }],                         // text direction
-
-  [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
-  [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-  [{ 'font': [] }],
-  [{ 'align': [] }],
-
-  ['clean']                                         // remove formatting button
-];
-
-var quill = new Quill('#editor', {
-  modules: {
-    toolbar: toolbarOptions
-  },
-  theme: 'snow'
+             for(var i = files.length - 1; i >= 0; i--) {
+                     sendFile(files[i], this);
+            }
+        }
+    }
+    });
 });
-
-                        </script>
+function sendFile(file, el) {
+var form_data = new FormData();
+form_data.append('file', file);
+$.ajax({
+    data: form_data,
+    type: "POST",
+    url: 'editor-upload.php',
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function(url) {
+        $(el).summernote('editor.insertImage', url);
+    }
+});
+}
+</script>
 
                     </div>
 

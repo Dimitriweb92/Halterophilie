@@ -23,6 +23,7 @@ if(is_string($oneView)){
 <head>
     <meta charset="UTF-8">
     <title>Article: <?= $oneView->getTitre() ?></title>
+    
     <?php include "View/head.view.php";?>
 </head>
 <body>
