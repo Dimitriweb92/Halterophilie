@@ -46,38 +46,38 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                    <h6 class="text-uppercase font-weight-bold">Nos cours</h6>
+                    <h6 class="text-uppercase font-weight-bold">Informations</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#!"> {Contenu}</a>
+                        <a href="#!"> Accueil</a>
                     </p>
                     <p>
-                        <a href="#!"> {Contenu}</a>
+                        <a href="#!"> A propos</a>
                     </p>
                     <p>
-                        <a href="#!"> {Contenu}</a>
+                        <a href="#!"> FAQ</a>
                     </p>
                     <p>
-                        <a href="#!"> {Contenu}</a>
+                        <a href="#!"> Reglements et chartes</a>
                     </p>
 
                 </div>
 
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                    <h6 class="text-uppercase font-weight-bold">{Contenu}</h6>
+                    <h6 class="text-uppercase font-weight-bold">Horaires</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#!">{Contenu}</a>
+                        Lu.,Ma. 00:00 - 00:00
                     </p>
                     <p>
-                        <a href="#!">{Contenu}</a>
+                        Mer.,Je. 00:00 - 00:00
                     </p>
                     <p>
-                        <a href="#!">{Contenu}</a>
+                        Ve. 00:00-00:00
                     </p>
                     <p>
-                        <a href="#!">{Contenu}</a>
+                        Week-end fermé
                     </p>
 
                 </div>

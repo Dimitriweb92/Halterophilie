@@ -3,7 +3,7 @@
 <?php include "View/head.view.php";?>
 
     <body>
-        <div class="text-center display-1 bg-dark text-white">BWA</div>
+        <div class="text-center display-1 text-white" style="background-color: #1c2331!important;">BWA</div>
         <section>
 
             <?php include "View/menu.view.php";?>
@@ -18,7 +18,7 @@
                         <div class="carousel-item active">
 
                             <div class="intro-1 text-white">
-                                <div class="container mt-4" style="padding-bottom: 50px;">
+                                <div class="container" style="padding-bottom: 50px;">
                                     <div>
                                         <h1 class="fletter">Brussels</h1>
                                         <h1 class="fletter">Weight</h1>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="carousel-item">
                             <div class="intro-1 text-white">
-                                <div class="container mt-4" style="padding-bottom: 50px;">
+                                <div class="container" style="padding-bottom: 50px;">
                                     <div>
                                         <h1 class="fletter">Brussels</h1>
                                         <h1 class="fletter">Weight</h1>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="carousel-item">
                             <div class="intro-1 text-white">
-                                <div class="container mt-4" style="padding-bottom: 50px;">
+                                <div class="container" style="padding-bottom: 50px;">
                                     <div>
                                         <h1 class="fletter">Brussels</h1>
                                         <h1 class="fletter">Weight</h1>

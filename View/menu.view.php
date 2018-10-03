@@ -10,7 +10,7 @@
     }
 ?>
 
-<nav id="myHeader" class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: inherit;">
+<nav id="myHeader" class="navbar navbar-expand-lg navbar-dark " style="padding: inherit;background-color: #1c2331!important;">
     <div>
         <button style="margin: 1rem;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -55,7 +55,7 @@
                 });
             </script>
             <li class="nav-item register">
-                <a class="nav-link" href="?login">S'inscrire</a>
+                <a class="nav-link2" href="?login">S'inscrire</a>
             </li>
         </ul>
     </div>

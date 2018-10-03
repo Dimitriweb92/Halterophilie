@@ -27,12 +27,15 @@ if(is_string($oneView)){
     <?php include "View/head.view.php";?>
 </head>
 <body>
-    <div class="text-center display-1 bg-dark text-white">BWA</div>
+    <div class="text-center display-1 text-white" style="background-color: #1c2331!important;">BWA</div>
 <?php
 include "View/menu.view.php";
 ?>
-<center><h1>Menu: <?= $oneView->getTitre() ?></h1></center>
-<div class="m-1  border border-primary rounded">
+<div>
+    <a href="./" style="color: #892d2d;margin:10px;"><b>Accueil</b></a> > <?= $oneView->getTitre() ?>
+</div>
+<center><h1 style="background-color: #892d2d;color: #FFF;padding: 10px;"><?= $oneView->getTitre() ?></h1></center>
+<div class="border rounded" style="margin: 0px 15%;">
         <p class="mt-2 p-3"><?= $oneView->getThetext() ?></p> 
         <?php } ?>
 </div>
