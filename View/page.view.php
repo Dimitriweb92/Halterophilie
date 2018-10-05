@@ -31,11 +31,11 @@ if(is_string($oneView)){
 <?php
 include "View/menu.view.php";
 ?>
-<div>
+<div style="background-color: #293244!important;color: #FFF;">
     <a href="./" style="color: #892d2d;margin:10px;"><b>Accueil</b></a> > <?= $oneView->getTitre() ?>
 </div>
 <center><h1 style="background-color: #892d2d;color: #FFF;padding: 10px;"><?= $oneView->getTitre() ?></h1></center>
-<div class="border rounded" style="margin: 0px 15%;">
+<div class="border rounded" style="margin: 0px 15%;padding: 0 5%;">
         <p class="mt-2 p-3"><?= $oneView->getThetext() ?></p> 
         <?php } ?>
 </div>
