@@ -19,21 +19,23 @@
                 <div class="container">
                     <center>
                         <h1>Administration du site</h1></center>
-                    <div>
-                        <h3>Post-It</h3>
-                        <textarea>Exemple de Post-It</textarea>
-                    </div>
-                    <div>
-                        <h3>Statistiques</h3>
-                        <p>........</p>
-                        <p>........</p>
-                        <p>........</p>
-                    </div>
-                    <div>
-                        <h3>Logs</h3>
-                        <p>Derniere connexion: ........</p>
-                        <p>Derniere modification: ........</p>
-                        <p>........</p>
+                      <div class="row mt-5">
+                        <div class="col-sm">
+                            <h3>Post-It</h3>
+                            <textarea style="height: 270px;width: 240px;resize: none;background-color: #FFEB3B;border: 1px solid #e2d034;font-weight: bold;">Exemple de Post-It</textarea>
+                        </div>
+                        <div class="col-sm">
+                            <h3>Statistiques</h3>
+                            <p>Visiteurs QUOTIDIEN : <b>5</b></p>
+                            <p>Visiteurs HEBDOMADAIRE: <b>61</b></p>
+                            <p>Visiteurs MENSUEL : <b>6354</b></p>
+                           
+                        </div>
+                        <div class="col-sm">
+                            <h3>Logs</h3>
+                            <p>Derniere connexion: 05-10-2018 à 09:55</p>
+                            <p>Derniere modification: Article <b>Entrainement</b></p>
+                        </div>
                     </div>
                     <div>
                         <hr> © 2018

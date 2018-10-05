@@ -4,11 +4,9 @@
       <a class="nav-link active" href="./">Accueil</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="?hautpage">Haut de page</a>
+      <a class="nav-link" href="?hautpage">Page d'accueil</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="?baspage">Bas de page</a>
-    </li>
+
     <li class="nav-item">
       <a class="nav-link" href="?articles">Liste des articles</a>
     </li>
@@ -22,3 +20,4 @@
       <a class="p-2 ml-auto nav-link" href="?deconnect">Déconnexion</a>
     </li>
   </ul>
+  <hr>
